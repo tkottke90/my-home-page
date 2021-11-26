@@ -18,6 +18,8 @@ submitBtn.addEventListener('click', (event) => {
     const searchString = searchField.value;
 
     query.append('q', searchString);
+
+    searchField.value = '';
   }
 
 
