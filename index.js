@@ -5,7 +5,7 @@ const searchForm = document.querySelector('#search-container');
 const searchLink = document.querySelector('#search-container--link');
 
 /** @type {HTMLButtonElement} */
-const submitBtn = document.querySelector('#search-container button');
+const submitBtn = document.querySelector('#search-container .search-container--search');
 submitBtn.addEventListener('click', (event) => {
   event.preventDefault();
   const query = new URLSearchParams()
