@@ -1,8 +1,7 @@
 input {
   padding: 0.5rem 1rem;
 
-
-  [outlined] {
+  &[outlined] {
     background-color: transparent;
     
     border: 1px solid var(--theme-foreground);
