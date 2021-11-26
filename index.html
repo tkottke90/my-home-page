@@ -14,10 +14,20 @@
   
 
   <form id="search-container" action="">
-    <input outlined name="search" placeholder="Google Search"><button color="primary" class="icon"><span class="iconify" data-icon="mdi:search"></span></button>
+    <input outlined name="search" placeholder="Google Search">
+    <button raised color="primary" class="icon search-container--menu"><span class="iconify" data-icon="mdi:chevron-down" ></span></button>
+    <button raised color="primary" class="icon search-container--search"><span class="iconify" data-icon="mdi:search"></span></button>
     <a id="search-container--link" target="_blank" hidden href="https://google.com">Google</a>
   </form>
 
+
+  <div id="adv-search-form" class="modal">
+    <form>
+      <input placeholder="keywords" />
+    </form>
+  </div>
+
   <script defer src="index.js" ></script>
+  <script defer src="lib/search-menu.js"></script>
 </body>
 </html>

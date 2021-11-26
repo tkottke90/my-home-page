@@ -51,6 +51,7 @@ a:hover {
 @import './topography.scss';
 @import './button.scss';
 @import './input.scss';
+@import './tooltip.scss';
 
 #search-container {
   height: 3rem;
@@ -70,4 +71,9 @@ a:hover {
   border-radius: 0;
   box-shadow: none;
   height: 100%;
+  border: 1px solid var(--theme-primary);
+}
+
+#search-container .search-container--menu {
+  padding: 0.75rem 0.125rem;
 }
