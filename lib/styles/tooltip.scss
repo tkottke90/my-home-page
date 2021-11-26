@@ -2,7 +2,7 @@
   opacity: 0;
   pointer-events: none;
 
-  transition: all 150ms var(--accelerate-bezier);
+  transition: opacity 150ms var(--accelerate-bezier);
 
   padding: 1rem;
   background-color: white;
