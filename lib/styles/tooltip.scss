@@ -1,6 +1,5 @@
 .modal {
-  opacity: 0;
-  transform: scale(0);
+  display: none;
   pointer-events: none;
 
   transition: all 250ms var(--accelerate-bezier);
@@ -11,6 +10,7 @@
   border-radius: 0.5rem;
 
   &[show] {
+    display: block;
     pointer-events: all;
 
     opacity: 1;
