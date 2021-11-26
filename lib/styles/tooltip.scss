@@ -1,19 +1,19 @@
 .modal {
-  display: none;
+  opacity: 0;
   pointer-events: none;
 
-  transition: all 250ms var(--accelerate-bezier);
-  transform-origin: top center;
+  transition: all 150ms var(--accelerate-bezier);
 
   padding: 1rem;
   background-color: white;
-  border-radius: 0.5rem;
+
+  box-shadow: var(--elevation-3);
+  z-index: 100;
 
   &[show] {
     display: block;
     pointer-events: all;
 
     opacity: 1;
-    transform: scale(1);
   }
 }

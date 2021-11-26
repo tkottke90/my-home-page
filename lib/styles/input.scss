@@ -8,3 +8,11 @@ input {
     color: var(--theme-foreground);
   }
 }
+
+.form-field {
+  margin-bottom: 1rem;
+
+  input {
+    min-width: 10rem;
+  }
+}

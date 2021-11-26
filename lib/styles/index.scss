@@ -54,26 +54,62 @@ a:hover {
 @import './tooltip.scss';
 
 #search-container {
+  display: flex;
+  justify-content: center;
+}
+
+#search-form {
   height: 3rem;
 
-  display: flex;
+  display: inline-flex;
   justify-content: center;
 
   margin: 2rem;
+  
+  input {
+    min-width: 20rem;
+  }
+  
+  input,
+  button {
+    border-radius: 0;
+    box-shadow: none;
+    height: 100%;
+    border: 1px solid var(--theme-primary);
+  }
+  
+  .search-form--menu {
+    padding: 0.75rem 0.125rem;
+  }
 }
 
-#search-container input {
-  min-width: 20rem;
+#adv-search-form {
+
+  display: flex;
+  flex-direction: column;
+
+
+  table {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  #adv-search-form--actions {
+
+    margin-top: 0.5rem;
+
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin-left: 0.5rem;
+    }
+  }
 }
 
-#search-container input,
-#search-container button {
-  border-radius: 0;
-  box-shadow: none;
-  height: 100%;
-  border: 1px solid var(--theme-primary);
-}
-
-#search-container .search-container--menu {
-  padding: 0.75rem 0.125rem;
+.rotate-180 {
+  transform: rotate(180deg);
 }

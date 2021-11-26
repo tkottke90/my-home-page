@@ -13,19 +13,38 @@
 <body>
   
 
-  <form id="search-container" action="">
-    <input outlined name="search" placeholder="Google Search">
-    <button raised color="primary" class="icon search-container--menu"><span class="iconify" data-icon="mdi:chevron-down" ></span></button>
-    <button raised color="primary" class="icon search-container--search"><span class="iconify" data-icon="mdi:search"></span></button>
-    <a id="search-container--link" target="_blank" hidden href="https://google.com">Google</a>
-  </form>
+  <section id="search-container">
+    <form id="search-form" action="">
+      <input outlined name="search" placeholder="Google Search">
+      <button raised color="primary" class="icon search-form--menu"><span class="iconify" data-icon="mdi:chevron-down" ></span></button>
+      <button raised color="primary" class="icon search-form--search"><span class="iconify" data-icon="mdi:search"></span></button>
+      <a id="search-form--link" target="_blank" hidden href="https://google.com">Google</a>
+    </form>
+  </section>
+
 
 
   <div id="adv-search-form" class="modal">
     <form>
-      <input placeholder="keywords" />
-      <section>
-        <button>
+      <table>
+        <tbody>
+          <tr>
+            <td>Keywords</td>
+            <td><input name="keywords" /></td>
+          </tr>
+          <tr>
+            <td>Website(s)</td>
+            <td><input name="sites" /></td>
+          </tr>
+          <tr>
+            <td>Exclusions</td>
+            <td><input name="exclusions" /></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <section id="adv-search-form--actions">
+        <button raised color="primary" submit>
           <span class="iconify" data-icon="mdi:search"></span>
           <span>Search</span>
         </button>

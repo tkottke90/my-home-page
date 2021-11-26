@@ -1,14 +1,23 @@
 /** @type {HTMLFormElement} */
-const searchForm = document.querySelector('#search-container');
+const searchForm = document.querySelector('#search-form');
 
 /** @type {HTMLAnchorElement} */
-const searchLink = document.querySelector('#search-container--link');
+const searchLink = document.querySelector('#search-form--link');
+
+function submitGoogleSearchQuery(queryString) {
+  const query = new URLSearchParams()
+  query.append('q', queryString);
+
+  searchLink.href = `https://google.com/search?${query.toString()}`;
+  searchLink.click();
+}
+
+
 
 /** @type {HTMLButtonElement} */
-const submitBtn = document.querySelector('#search-container .search-container--search');
+const submitBtn = document.querySelector('#search-form .search-form--search');
 submitBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  const query = new URLSearchParams()
   
   /** @type {HTMLInputElement} */
   const searchField = Array.from(searchForm.elements).find(element => element.name === 'search');
@@ -17,12 +26,8 @@ submitBtn.addEventListener('click', (event) => {
     /** @type {String} */
     const searchString = searchField.value;
 
-    query.append('q', searchString);
+    submitGoogleSearchQuery(searchString);
 
     searchField.value = '';
   }
-
-
-  searchLink.href = `https://google.com/search?${query.toString()}`;
-  searchLink.click();
 });
