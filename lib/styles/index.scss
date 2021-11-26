@@ -12,6 +12,7 @@
 
   --theme-foreground: hsl(0, 100%, 100%);
   --theme-background: hsl(244.6, 18.3%, 13.9%);
+  --theme-background--elevated: hsl(244.6, 18.3%, 30%);
 
   --default-bezier: cubic-bezier(0.4, 0.0, 0.2, 1);
   --decelerate-bezier: cubic-bezier(0.0, 0.0, 0.2, 1);
@@ -48,6 +49,7 @@ a:hover {
   color: var(--theme-primary);
 }
 
+@import './muuri.scss';
 @import './topography.scss';
 @import './button.scss';
 @import './input.scss';
