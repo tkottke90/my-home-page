@@ -1,0 +1,116 @@
+@mixin hoverNotDisabled() {
+  &:hover:not([disabled]) {
+    @content;
+  }
+}
+
+@mixin activeNotDisabled() {
+  &:active:not([disabled]) {
+    @content;
+  }
+}
+
+button {
+  $default-primary: purple;
+  $default-accent: orange;
+  $default-warn: red;
+  $default-hover-bg: hsl(0, 0%, 90%);
+  
+  background-color: transparent;
+  color: var(--theme-primary, $default-primary);
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 1.125rem;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+
+  border-radius: 0.25rem;
+  outline: none;
+
+  display: flex;
+  overflow: hidden;
+
+  @include hoverNotDisabled() {
+    background-color: var(--foreground-hover, $default-hover-bg);
+  }
+  
+  @include activeNotDisabled() {
+    filter: contrast(0.75);
+  }
+  
+  &.icon {
+    border-radius: 50%;
+    padding: 0.75rem;
+
+    & > svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
+  &:not([raised]):not([outlined]) {
+    color: var(--theme-primary, $default-primary);
+    
+    &[color="accent"] {
+      color: var(--theme-accent, $default-accent);
+    }
+    
+    &[color="warn"] {
+      color: var(--theme-warn, $default-warn);
+    }
+    
+    &[color="on-primary"] {
+      color: var(--theme-on-primary, #000);
+    }
+
+    &[color="on-accent"] {
+      color: var(--theme-on-accent, #000);
+    }
+  }
+  
+  &[raised] {
+    box-shadow: var(--elevation-2);
+    
+    &:not([color]),
+    &[color="primary"] {
+      color: var(--theme-on-primary, black);
+      background-color: var(--theme-primary, $default-primary)
+    }
+
+    &[color="accent"] {
+      color: var(--theme-on-accent, black);
+      background-color: var(--theme-accent, yellow);
+    }
+
+    &[color="warn"] {
+      color: var(--theme-on-warn, black);
+      background-color: var(--theme-warn, yellow);
+    }
+    
+    @include hoverNotDisabled() {
+      filter: saturate(2);
+    }
+    
+    @include activeNotDisabled() {
+      filter: saturate(3);
+    }
+  }
+
+  &[outlined] {
+    border: 2px solid;
+    color: var(--theme-primary, purple);
+
+    &[color="accent"] {
+      color: var(--theme-accent, black);
+    }
+
+    &[color="warn"] {
+      color: var(--theme-warn, white);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.75;
+    cursor: default;
+  }
+}
